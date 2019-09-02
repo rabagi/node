@@ -12,3 +12,5 @@ let deadpool ={
 let nombre = deadpool.nombre;
 let apellido = deadpool.apellido;
 let poder = deadpool.poder;
+
+let {nombre, apellido, poder} = 
