@@ -45,7 +45,6 @@ let getSalario = (empleado, callback)=>{
             id: empleado.id
         })
     }
-
 }
 
 
