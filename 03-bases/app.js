@@ -1,6 +1,10 @@
 const { crearArchivo } = require('./multiplicar/multiplicar');
 
-let base = 'ac';
+//let base = 'ac';
+
+let argv = process.argv;
+let parametro =  argv[2];
+let base = parametro.split('=')[1];
 
 
 crearArchivo(base)
