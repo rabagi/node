@@ -13,7 +13,20 @@ const guardarDB = () => {
 
 }
 
+let cargarDB = () => {
+
+    try{
+        listadoPorHacer = require('../bd/data.json');
+
+    }catch(error){
+        listadoPorHacer = [];
+    }
+   
+}
+
 const crear = (descripcion) => {
+
+    cargarDB();
 
     let porHacer = {
         descripcion,
