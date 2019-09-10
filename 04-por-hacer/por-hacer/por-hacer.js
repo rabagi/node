@@ -52,7 +52,7 @@ const actualizar = (descripcion, completado = true) =>{
         return tarea.descripcion === descripcion;
     });
 
-    if(index >=0){
+    if(index >= 0){
         listadoPorHacer[index].completado =  completado;
         guardarDB();
         return true;
@@ -62,6 +62,22 @@ const actualizar = (descripcion, completado = true) =>{
 
 }
 
+const borrar = (descripcion) =>{
+    cargarDB();
+
+    let nuevoListado = listadoPorHacer.filter( tarea => {
+        return tarea.descripcion != descripcion;
+    });
+
+    if( listadoPorHacer.length === nuevoListado.length){
+        return false;
+    }else{
+        listadoPorHacer = nuevoListado;
+        guardarDB();
+        return true;
+    }
+}
+
 module.exports = {
-    crear, getListado,actualizar
+    crear, getListado,actualizar,borrar
 }
