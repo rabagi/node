@@ -17,12 +17,13 @@ switch(comando) {
         for(let tarea of listado){
             console.log('==Por hacer=='.green);
             console.log(tarea.descripcion);
-            console.log('Estado', tarea.completado);
+            console.log('Estado: ', tarea.completado);
             console.log('============='.green);
         }
     break;
     case 'actualizar':
-        console.log('actualizar tarea');
+        let actualizado = porHacer.actualizar(argv.descripcion, argv.completado);
+        console.log(actualizado);
     break;
     default:
         console.log('comando no encontrado');
